@@ -221,7 +221,9 @@ public class ExamplesOperator {
 		List<String> warnings = new ArrayList<String>();
 		ProblemsView problemsView = new ProblemsView();
 		problemsView.open();
+		problemsView.activate();
 		for (Problem warning : problemsView.getProblems(ProblemType.WARNING)) {
+			problemsView.activate();
 			warnings.add(warning.getDescription());
 		}
 		return warnings;
@@ -234,7 +236,9 @@ public class ExamplesOperator {
 		List<String> errors = new ArrayList<String>();
 		ProblemsView problemsView = new ProblemsView();
 		problemsView.open();
+		problemsView.activate();
 		for (Problem error : problemsView.getProblems(ProblemType.ERROR)) {
+			problemsView.activate();
 			errors.add(error.getDescription());
 		}
 		return errors;
